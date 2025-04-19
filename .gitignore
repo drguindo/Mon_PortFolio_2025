@@ -1,0 +1,23 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Dossiers IDE
+.vscode/
+.idea/
+
+# Fichiers de dépendances
+node_modules/
+venv/
+__pycache__/
+
+# Fichiers de build
+dist/
+build/
+
+# Fichiers de logs
+*.log
+
+# Fichiers d'environnement
+.env
+.env.local 
