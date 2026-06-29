@@ -77,6 +77,16 @@ ul {
     background: white;
     color: var(--primary);
 }
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+.hero-actions .button1 {
+    margin-top: 20px;
+}
 
 /* NAVBAR */
 .navbar {
