@@ -435,14 +435,11 @@ ul {
     background-color: #25D366;   /* vert officiel WhatsApp */
 }
 .social-orcid {
-    background-color: #A6CE39;   /* vert officiel ORCID */
+    background-color: #ffffff;   /* fond blanc pour faire ressortir le cercle vert ORCID */
 }
-.social-orcid .orcid-id {
-    font-size: 4rem;
-    font-weight: 700;
-    font-style: italic;
-    color: #ffffff;
-    line-height: 1;
+.social-orcid .orcid-logo {
+    width: 96px;
+    height: 96px;
 }
 #portfolio .col-md-4 {
     margin-bottom: 20px;
