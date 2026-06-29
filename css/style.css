@@ -1,3 +1,32 @@
+/* =====================================================================
+   CHARTE GRAPHIQUE (DESIGN SYSTEM) — Dr Aly Abdoulaye GUINDO
+   ---------------------------------------------------------------------
+   Toutes les couleurs du site sont définies ICI, une seule fois.
+   Pour changer l'ambiance de tout le site, il suffit de modifier
+   les valeurs ci-dessous (notamment --primary).
+
+   Palette « Bleu médical » (cohérente avec la carte de visite) :
+   - registre médical / académique, sobre et professionnel.
+
+   >>> VARIANTES POSSIBLES (remplacez les 3 lignes --primary* ) :
+       • Teal clinique  : --primary:#117A8B; --primary-dark:#0C5460; --primary-light:#20A4B8;
+       • Vert santé     : --primary:#1E7A52; --primary-dark:#155E3F; --primary-light:#2E9E6B;
+   ===================================================================== */
+:root {
+    --primary:        #1A5276;   /* Bleu médical profond (couleur principale) */
+    --primary-dark:   #14405C;   /* Bleu nuit (survol / états actifs) */
+    --primary-light:  #2E86C1;   /* Bleu clair (accents, liens) */
+
+    --ink:            #2C3E50;   /* Texte foncé (titres, corps) */
+    --muted:          #5D6D7E;   /* Texte secondaire (gris bleuté) */
+
+    --bg-soft:        #F4F7F9;   /* Fond clair des sections « claires » */
+    --line:           #D6DEE5;   /* Filets / bordures discrètes */
+
+    --on-primary:     #FFFFFF;   /* Texte posé sur fond bleu */
+    --on-primary-soft:#D6EAF8;   /* Texte/liens clairs sur fond bleu */
+}
+
 /* GENERAL */
 body {
     font-family: 'Lato', sans-serif;
@@ -22,7 +51,7 @@ section .heading h2{
 .divider {
     width: 100px;
     height: 2px;
-    background-color: #d82c2e;
+    background-color: var(--primary);
     margin: 0 auto 20px;   
 }
 .divider.white {
@@ -46,12 +75,12 @@ ul {
 }
 .button1:hover {
     background: white;
-    color: #d82c2e;
+    color: var(--primary);
 }
 
 /* NAVBAR */
 .navbar {
-    background-color: #d82c2e;
+    background-color: var(--primary);
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: bold;
@@ -60,6 +89,8 @@ ul {
 .navbar-nav {
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    align-items: center;
 }
 .nav-link {
     color: white !important;
@@ -68,13 +99,12 @@ ul {
 .nav-link.active,
 .nav-link:hover {
     background-color: white;
-    color: #d82c2e !important;
+    color: var(--primary) !important;
 }
-
 
 /* ABOUT */
 #about {
-    background-color: #d82c2e;
+    background-color: var(--primary);
 }
 .profile-picture {
     text-align: center;
@@ -85,13 +115,20 @@ ul {
     text-transform: uppercase;
     margin-bottom: 20px;
 }
+#about .heading h3 {
+    color: var(--on-primary-soft);
+    font-weight: 600;
+}
+#about .heading p {
+    color: #f5f5f5;
+}
 
 /* SKILLS */
 #skills .heading h2 {
-    color: #d82c2e;
+    color: var(--primary);
 }
 .skills-category {
-    color: #d82c2e;
+    color: var(--primary);
     margin: 20px 0;
     font-weight: bold;
     text-transform: uppercase;
@@ -100,7 +137,7 @@ ul {
 #skills .progress {
     height: 45px;
     margin: 15px 0;
-    background-color: #f8f9fa;
+    background-color: var(--bg-soft);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -108,7 +145,7 @@ ul {
     margin-bottom: 0px;
 }
 #skills .progress-bar {
-    background-color: #d82c2e;
+    background-color: var(--primary);
     border-radius: 5px;
     transition: width 1s ease-in-out;
 }
@@ -122,7 +159,7 @@ ul {
 
 /* EXPERIENCE */
 #experience {
-    background-color: #d82c2e;
+    background-color: var(--primary);
 }
 #experience .heading h2 {
     color: white;
@@ -147,10 +184,11 @@ ul {
     top: 0;
     bottom: 0;
     position: absolute;
-    width: 5px;
-    background-color: #333;
+    width: 4px;
+    background-color: var(--on-primary-soft);
     left: 50%;
-    margin-left: -2.5px;
+    margin-left: -2px;
+    opacity: 0.6;
 }
 .timeline > li {
     margin-bottom: 20px;
@@ -165,7 +203,7 @@ ul {
     clear: both;
 }
 .timeline li .timeline-badge {
-    color: #d82c2e;
+    color: var(--primary);
     width: 50px;
     line-height: 50px;
     font-size: 20px;
@@ -221,10 +259,10 @@ ul {
 .timeline-heading h3 {
     margin-top: 5px;
     font-size: 20px;
-    color: #d82c2e;
+    color: var(--primary);
 }
 .timeline-heading h4 {
-    color: #333;
+    color: var(--ink);
     font-weight: normal;
 }
 .timeline-body p {
@@ -234,17 +272,17 @@ ul {
 
 /* EDUCATION */
 #education .heading h2 {
-    color: #d82c2e;
+    color: var(--primary);
 }
 .education-category {
     margin-bottom: 40px;
 }
 .education-category h3 {
-    color: #d82c2e;
+    color: var(--primary);
     margin: 30px 0 20px;
     font-size: 1.5rem;
     text-transform: uppercase;
-    border-bottom: 2px solid #d82c2e;
+    border-bottom: 2px solid var(--primary);
     padding-bottom: 10px;
 }
 .education-block {
@@ -265,17 +303,17 @@ ul {
 }
 .education-block span {
     font-size: 35px;
-    color: #d82c2e;
+    color: var(--primary);
     margin-bottom: 15px;
     display: block;
 }
 .education-block h3 {
-    color: #d82c2e;
+    color: var(--primary);
     margin: 15px 0;
     font-size: 1.5rem;
 }
 .education-block h4 {
-    color: #333;
+    color: var(--ink);
     margin-bottom: 20px;
     font-weight: normal;
     font-size: 1.1rem;
@@ -288,7 +326,7 @@ ul {
 
 /* PORTFOLIO */
 #portfolio {
-    background-color: #d82c2e;
+    background-color: var(--primary);
     padding: 80px 0;
 }
 
@@ -340,7 +378,7 @@ ul {
 .social-overlay h4 {
     margin: 0;
     font-size: 1.5rem;
-    color: #d82c2e;
+    color: var(--primary);
 }
 
 .social-overlay p {
@@ -365,12 +403,12 @@ ul {
 
 /* RECOMMENDATIONS */
 #recommendations {
-    background-color: #f8f9fa;
+    background-color: var(--bg-soft);
     padding: 80px 0;
 }
 
 #recommendations .heading h2 {
-    color: #d82c2e;
+    color: var(--primary);
     margin-bottom: 50px;
 }
 
@@ -387,7 +425,7 @@ ul {
 }
 
 #myCarousel .carousel-item h3 {
-    color: #333;
+    color: var(--ink);
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -395,7 +433,7 @@ ul {
 }
 
 #myCarousel .carousel-item h4 {
-    color: #d82c2e;
+    color: var(--primary);
     font-size: 1.1rem;
     margin-bottom: 5px;
 }
@@ -409,7 +447,7 @@ ul {
 #myCarousel .carousel-control-next {
     width: 40px;
     height: 40px;
-    background-color: #d82c2e;
+    background-color: var(--primary);
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
@@ -429,7 +467,7 @@ ul {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #d82c2e;
+    background-color: var(--primary);
     opacity: 0.5;
 }
 
@@ -439,7 +477,7 @@ ul {
 
 /* FOOTER */
 footer {
-    background-color: #333;
+    background-color: var(--ink);
     padding: 30px 0;
     color: white;
 }
@@ -456,7 +494,7 @@ footer .container {
 }
 
 .back-to-top:hover {
-    color: #d82c2e;
+    color: var(--primary);
     transform: translateY(-3px);
 }
 
@@ -474,7 +512,7 @@ footer .container {
 }
 
 .social-icon:hover {
-    color: #d82c2e;
+    color: var(--primary);
     transform: translateY(-3px);
 }
 
@@ -502,7 +540,7 @@ footer h5 {
 
 /* CONTACT */
 #contact {
-    background-color: #d82c2e;
+    background-color: var(--primary);
     padding: 80px 0;
 }
 
@@ -564,7 +602,7 @@ textarea.form-control {
     padding: 12px 40px;
     font-size: 1.1rem;
     background-color: white;
-    color: #d82c2e;
+    color: var(--primary);
     border: 2px solid white;
     transition: all 0.3s ease;
 }
@@ -592,7 +630,7 @@ textarea.form-control {
 
 /* RESEARCH */
 #research .heading h2 {
-    color: #d82c2e;
+    color: var(--primary);
 }
 .research-block {
     background: #e9ecef;
@@ -602,11 +640,11 @@ textarea.form-control {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .research-block h3 {
-    color: #d82c2e;
+    color: var(--primary);
     margin-bottom: 10px;
 }
 .research-block h4 {
-    color: #333;
+    color: var(--ink);
     margin-bottom: 20px;
     font-weight: normal;
 }
@@ -619,7 +657,7 @@ textarea.form-control {
 }
 .research-block ul li:before {
     content: "•";
-    color: #d82c2e;
+    color: var(--primary);
     font-weight: bold;
     position: absolute;
     left: -15px;
@@ -627,12 +665,12 @@ textarea.form-control {
 
 /* AWARDS */
 #awards {
-    background-color: #f8f9fa;
+    background-color: var(--bg-soft);
     padding: 80px 0;
 }
 
 #awards .heading h2 {
-    color: #d82c2e;
+    color: var(--primary);
     margin-bottom: 50px;
 }
 
@@ -657,7 +695,7 @@ textarea.form-control {
 
 .award-icon span {
     font-size: 3rem;
-    color: #d82c2e;
+    color: var(--primary);
 }
 
 .award-content {
@@ -665,7 +703,7 @@ textarea.form-control {
 }
 
 .award-content h3 {
-    color: #d82c2e;
+    color: var(--primary);
     margin-bottom: 5px;
     font-size: 1.5rem;
 }
@@ -685,13 +723,13 @@ textarea.form-control {
 .award-content .divider {
     width: 50px;
     height: 2px;
-    background-color: #d82c2e;
+    background-color: var(--primary);
     margin: 15px 0;
 }
 
 /* SOCIETIES */
 #societies {
-    background-color: #d82c2e;
+    background-color: var(--primary);
     padding: 80px 0;
 }
 
@@ -751,12 +789,12 @@ textarea.form-control {
 
 /* REFERENCES */
 #references {
-    background-color: #f8f9fa;
+    background-color: var(--bg-soft);
     padding: 80px 0;
 }
 
 #references .heading h2 {
-    color: #d82c2e;
+    color: var(--primary);
     margin-bottom: 50px;
 }
 
@@ -781,7 +819,7 @@ textarea.form-control {
 
 .reference-icon span {
     font-size: 2.5rem;
-    color: #d82c2e;
+    color: var(--primary);
 }
 
 .reference-content {
@@ -789,7 +827,7 @@ textarea.form-control {
 }
 
 .reference-content h3 {
-    color: #d82c2e;
+    color: var(--primary);
     margin-bottom: 5px;
     font-size: 1.4rem;
 }
@@ -814,7 +852,7 @@ textarea.form-control {
 }
 
 .reference-details li strong {
-    color: #333;
+    color: var(--ink);
     display: block;
     margin-top: 10px;
 }
@@ -825,11 +863,11 @@ textarea.form-control {
 
 .reference-details .bi {
     margin-right: 8px;
-    color: #d82c2e;
+    color: var(--primary);
 }
 
 .reference-details a {
-    color: #d82c2e;
+    color: var(--primary);
     text-decoration: none;
     transition: all 0.3s ease;
     padding: 2px 5px;
@@ -837,8 +875,8 @@ textarea.form-control {
 }
 
 .reference-details a:hover {
-    color: #b32426;
-    background-color: rgba(216, 44, 46, 0.1);
+    color: var(--primary-dark);
+    background-color: rgba(26, 82, 118, 0.08);
     text-decoration: none;
 }
 
@@ -863,7 +901,14 @@ textarea.form-control {
 .reference-content .divider {
     width: 50px;
     height: 2px;
-    background-color: #d82c2e;
+    background-color: var(--primary);
     margin: 15px 0;
+}
+
+/* Suppression des styles du sélecteur de langue */
+.language-switch,
+.language-circle,
+.language-text {
+    display: none;
 }
 
